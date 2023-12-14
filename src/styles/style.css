@@ -5,7 +5,7 @@
 }
 
 #container {
-    height: calc(100vh - 80px);
+    height: calc(100vh - 5rem);
     width: 100%;
     display: flex;
     align-items: center;
@@ -13,13 +13,14 @@
     background-image: url("../images/background2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    border-top: 1px solid #fff;
 }
 
 .flip-card {
-    width: 300px;
-    height: 450px;
+    width: 18.75rem;
+    height: 28.125rem;
     background-color: transparent;
-    perspective: 1000px;
+    perspective: 62.5rem;
 }
 
 .flip-card:hover .flip-card-inner {
@@ -38,10 +39,10 @@
 
 .flip-card-back,
 .flip-card-front {
-    width: 300px;
-    height: 450px;
-    border-radius: 30px;
-    box-shadow: 0 0 20px 5px #2c2c2c;
+    width: 18.75rem;
+    height: 28.125rem;
+    border-radius: 1.875rem;
+    box-shadow: 0 0 1.25rem 0.313rem #2c2c2c;
     position: absolute;
     backface-visibility: hidden;
 }
@@ -50,36 +51,39 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 30px;
+    border-radius: 1.875rem;
 }
 
 #navbar-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 80px;
+    height: 5rem;
     background-color: #111107;
-}
-
-#navbar-container {
-    display: flex;
-    flex-direction: row;
 }
 
 #navbar-container ul {
     display: flex;
-    gap: 15px;
+    margin: auto 3.5rem;
+    padding: 0;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    list-style: none;
 }
 
 #navbar-container button {
-    padding: 1vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
     background-color: #000;
     color: #9b8400;
-    text-shadow: 1px 1px 1px #00000080;
-    border: 1px solid #fff;
-    border-radius: 7px;
-    box-shadow: 1px 1px 10px #f0f0f0;
+    text-shadow: 0.063rem 0.063rem 0.063rem #00000080;
+    border: 0.063rem solid #fff;
+    border-radius: 0.438rem;
+    box-shadow: 0.063rem 0.063rem 0.625rem #f0f0f0;
     cursor: pointer;
 }
 
@@ -88,4 +92,118 @@
     color: #000;
     transform: scale(1.10);
     transition: 0.5s;
+}
+
+@media (max-width: 1378px) and (min-width: 768px) {
+    #navbar-container {
+        height: 8rem;
+    }
+
+    #container {
+        height: calc(100vh - 5rem);
+    }
+}
+
+@media only screen and (max-width: 767.9px) and (min-width: 501px) {
+    #navbar-container ul {
+        gap: 1.2rem;
+    }
+
+    #navbar-container button {
+        width: 75%;
+        box-shadow: none;
+        border-bottom: 0.063rem solid #FFD700;
+        box-shadow: 0 0 0.313rem 0.063rem #9b8400;
+        color: #fff;
+        padding: 0.25rem 3.5rem;
+        margin: 0 auto;
+        justify-content: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #navbar-container button:focus {
+        transform: scale(1.05);
+        color: #fff;
+        background-color: limegreen;
+        text-shadow: 0.063rem 0.063rem 0.063rem #000;
+    }
+
+    #navbar-container {
+        width: 40%;
+        height: 100vh;
+    }
+    #navbar-container ul {
+        margin: 0;
+        flex-direction: column;
+    }
+    #container {
+        border-left: 0.063rem solid #fff;
+        width: 100%;
+        height: 100vh;
+        justify-content: flex-end;
+        background-position: center;
+        border-top: none;
+    }
+
+    .flip-card {
+        margin: 0 auto;
+    }
+
+    .flip-card-back,
+    .flip-card-front,
+    .flip-card {
+        width: 15.625rem;
+        height: 23.75rem;
+    }
+
+    .all-containers {
+        display: flex;
+    }
+}
+
+@media (max-width: 500px) {
+    #navbar-container button {
+        box-shadow: none;
+        border: 1px solid #fff;
+        color: #fff;
+        background-color: #3b6e00;
+        padding: 0.15rem 0.25rem;
+        border-radius: 5px;
+        width: 7.8rem;
+    }
+
+    #navbar-container button:focus {
+        background-color: #67b908;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    #navbar-container ul {
+        margin: 0.5rem 0;
+        justify-content: center;
+        gap: 0.75rem;
+    }
+
+    #navbar-container {
+        height: 18rem;
+        background-color: #050805;
+    }
+
+    #container {
+        height: calc(100vh - 18rem);
+        background-position: center;
+    }
+
+    .flip-card-back,
+    .flip-card-front,
+    .flip-card {
+        width: 13.75rem;
+        height: 21.25rem;
+    }
+
+    .flip-card {
+        margin: 0 auto;
+    }
 }
